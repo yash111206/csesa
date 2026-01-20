@@ -28,7 +28,7 @@ def home():
         cursor = mysql.connection.cursor()
         cursor.execute("SELECT * FROM events")
         events = cursor.fetchall()
-        return render_template('index.html', events=events)
+        return render_template('home.html', events=events)
     except Exception as e:
         return f"MySQL Error: {e}"
 
@@ -36,3 +36,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(host='0.0.0',debug=True)
+
